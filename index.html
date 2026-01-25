@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>PHOENIX NEXUS PRIME</title>
+</head>
+<body class="bg-black text-emerald-500 font-mono p-4 flex items-center justify-center min-h-screen">
+    <div class="border-2 border-emerald-500 p-6 rounded-lg shadow-[0_0_25px_rgba(16,185,129,0.4)] w-full max-w-2xl bg-black">
+        
+        <h1 class="text-xl font-bold border-b border-emerald-500 pb-2 mb-4 flex justify-between items-center">
+            <span class="tracking-widest">PHOENIX <span class="text-white font-light">NEXUS PRIME</span></span>
+            <span id="clock" class="text-white text-sm bg-emerald-900/30 px-2 py-1 rounded">00:00:00</span>
+        </h1>
+
+        <div class="grid grid-cols-2 gap-2 text-[10px] mb-6">
+            <div class="border border-emerald-900 p-2 bg-emerald-950/10">STATION: <span class="text-white">THINKPAD_X1_YOGA</span></div>
+            <div class="border border-emerald-900 p-2 text-right bg-emerald-950/10">POWER: <span class="text-white text-xs">● AC_CONNECTED</span></div>
+            <div class="border border-emerald-900 p-2 bg-emerald-950/10">LINK: <span class="text-emerald-400">ENCRYPTED_SSH</span></div>
+            <div class="border border-emerald-900 p-2 text-right bg-emerald-950/10">SYNC: <span class="animate-pulse text-emerald-400 font-bold">ACTIVE</span></div>
+        </div>
+
+        <div class="bg-emerald-950/10 border border-emerald-500/50 p-4 rounded-md mb-4 relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-1 text-[8px] text-emerald-800">v2.52.0_STABLE</div>
+            <h2 class="text-[10px] font-bold mb-3 uppercase tracking-[0.2em] text-white">System Command Interface</h2>
+            <div class="grid grid-cols-2 gap-3">
+                <button class="border border-emerald-500/50 px-3 py-2 text-[10px] hover:bg-emerald-500 hover:text-black transition-all duration-300 font-bold">REFRESH_REPOS</button>
+                <button class="border border-emerald-500/50 px-3 py-2 text-[10px] hover:bg-emerald-500 hover:text-black transition-all duration-300 font-bold">PING_PHONE</button>
+            </div>
+        </div>
+
+        <div class="flex justify-between items-center mt-6">
+            <p class="text-[9px] text-emerald-800 italic uppercase">Secure Connection: GitHub <-> ThinkPad <-> Termux</p>
+            <div class="h-1 w-24 bg-emerald-900 rounded-full overflow-hidden">
+                <div class="h-full bg-emerald-500 w-2/3 animate-pulse"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateTime() {
+            const now = new Date();
+            document.getElementById('clock').innerText = now.toLocaleTimeString('nl-NL');
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+</body>
+</html>
